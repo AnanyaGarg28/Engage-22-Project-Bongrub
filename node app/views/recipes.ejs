@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="output.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Maven+Pro&family=Mochiy+Pop+One&family=Open+Sans:wght@300&family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2ed088eaad.js" crossorigin="anonymous"></script>
+    <title>Bongrub</title>
+    <link rel="icon" href="img/logo.png">
+    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js" integrity="sha256-EXPXz4W6pQgfYY3yTpnDa3OH8/EPn16ciVsPQ/ypsjk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js" integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/autocomplete-theme-classic"/>  
+    <script>
+        let search="false";
+        search="<%= search %>";
+        let title='recipes';
+    </script>
+</head>
+<body class="bg-orange-50">
+    <nav id="navbar" class="sticky pt-4 px-12 top-0 bg-orange-50 z-10">
+        <div class="flex">
+            <div class="md:hidden flex-none flex items-center justify-center">
+                <ul class="flex">
+                    <a href='/search'><li class="flex-auto grow text-2xl"><i class="fa-solid fa-magnifying-glass mx-2"></i></li></a>
+                </ul>
+            </div>
+            <div class="grow md:flex-none mr-4">
+                <object data="img/logo.svg" type="image/svg+xml" class="mx-auto" style="width: 10rem"></object>
+            </div>
+            <ul class="grow items-center justify-center mx-52 text-xl font-normal hidden md:flex">
+                <li class="p-4 flex-auto grow text-center home transition duration-150 ease-in-out transform hover:scale-105"><a href="/">HOME</a></li>
+                <li class="p-4 flex-auto grow text-center recipes transition duration-150 ease-in-out transform hover:scale-105"><a href="/recipes">RECIPES</a></li>
+                <li class="p-4 flex-auto grow text-center resources transition duration-150 ease-in-out transform hover:scale-105"><a href="/resources">RESOURCES</a></li>
+                <li class="p-4 flex-auto grow text-center subscribe text-red-600 transition duration-150 ease-in-out transform hover:scale-105"><a href="/subscribe">SUBSCRIBE!</a></li>
+            </ul>
+            <div class="flex-none hidden md:flex items-center justify-center">
+                <ul class="flex">
+                    <li class="flex-auto grow text-2xl"><i class="fa-solid fa-plus ml-2 mr-3"></i></li>
+                    <a href="/search"><li class="flex-auto grow text-2xl"><i class="fa-solid fa-magnifying-glass mx-2"></i></li></a>
+                </ul>
+            </div>
+            <div class="flex-none flex items-center justify-center align-right">
+                <button type="button" id="toggle-button" class="flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200 " aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                    <svg class="hidden w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+            </div>
+            </div>
+            <div class="toggle hidden h-0.5 w-full bg-mint-500 my-2 rounded-md"></div>
+            <div class="toggle hidden container w-full">
+            <ul>
+                <li class="my-4"><a href="/" class="hover:underline">Home</a></li>
+                <li class="my-4"><a href="/recipes">Recipes</a></li>
+                <li class="my-4"><a href="/resources">Resources</a></li>
+                <li class="my-4 text-red-600"><a href="/subscribe">Subscribe!</a></li>
+            </ul>
+            </div>
+            <div class="h-0.5 w-full bg-mint-500 my-2 rounded-md"></div>
+            <div class="h-0.5 w-full bg-mint-500 my-2 rounded-md"></div>
+    </nav>
+    <!-- <object data="img/logo.svg" type="image/svg+xml" class="mx-auto w-1/3"></object> -->
+    <div class="grid grid-cols-1 md:grid-cols-2 md:divide-x font-light leading-7 mb-20 mt-20">
+        <div class="mb-4">
+            <img src="img/BonGrub.png" alt="" class="mx-auto w-3/6">
+        </div>
+        <div>
+            <p class="mx-20 text-2xl font-normal text-left">Bongrub welcomes you all to a fantastic collection of recipes! With us, we would make sure that you get recipes based as per your taste and likings.</p>
+            <br>
+            <p class="mx-20 text-2xl text-justify">With us, you will get a vareity of recipe recommendations to try on or to suggest. Whether you're an expreinced master chef or you're a beginner, we have all sorts of recipes based on the time you need to invest.
+                When it comes to taste, there is no compromise, and so, we present to you the most famous and loved recipes from around the world. These are for you to try, taste and share. 
+            </p>
+            <br>
+            <p class="mx-20 text-2xl text-left"> If this is not enough for the chef inside you, worry not! We have got your back. You can share you own unique recipes with us and for the world to follow.</p>
+            <br>
+            <p class="mx-20 text-2xl font-normal text-left">Exciting, isn't it? So, let's discover! Happy Grubbing !!</p>
+        </div>
+    </div>
+    <div class="mt-8 mb-16 relative h-0.5 bg-slate-900 w-full"></div>
+    <div class="h-8"></div>
+    <div class="mx-12 grid grid-cols-1 md:grid-cols-2 divide-x-2 divide-mint-500 font-light leading-7 mb-20">
+        <div class="grid content-center">
+            <p class="text-slate-900 text-4xl text-center">FIND A RECIPE</p>
+            <p class="italic text-xl text-center">9,000+ Recipes</p>
+        </div> 
+        <div class="grid content-center">
+            <p class="text-center text-2xl mx-8">Whether you’re looking for healthy recipes or ideas to use up last night’s chicken, we’ve more than 9,000+ tested recipes to choose from, so you’re sure to find the perfect dish. Take a look at our most popular recipes.</p>
+        </div>  
+    </div>
+    <div class="md:px-36"><div id="autocomplete" class="mx-12"></div></div>
+    <div id="search" class="mt-20 mb-16 relative h-0.5 bg-slate-900">
+        <p class="bg-slate-900 text-3xl font-light text-white inline p-4 absolute -top-10 centered-axis-x">Categories</p>
+    </div>
+    <div id="cat1" class="grid grid-cols-6 mx-0 text-center text-3xl text-darkblue-500 font-oswald my-4">
+        <div class="mx-2 p-2 hover:text-red-300"><span>BREAKFAST</span></div>
+        <div class="mx-2 p-2 hover:text-red-300"><span>VEGETABLE</span></div>
+        <div class="mx-2 p-2 hover:text-red-300"><span>LUNCH</span></div>
+        <div class="mx-2 p-2 hover:text-red-300"><span>DESSERT</span></div>
+        <div class="mx-2 p-2 hover:text-red-300"><span>BEVERAGES</span></div>
+        <div class="mx-2 p-2 hover:text-red-300"><span>BREADS</span></div>         
+    </div>
+    <div class="h-4"></div>
+    <div id="category1" class="grid grid-cols-2 md:grid-cols-4 mx-4">
+    </div>
+    <div class="mt-20 mb-16 relative h-0.5 bg-slate-900">
+        <p class="bg-slate-900 text-3xl font-light text-white inline p-4 absolute -top-10 centered-axis-x">Time-savers</p>
+    </div>
+    <div id="cat2" class="grid grid-cols-5 mx-0 text-center text-3xl text-darkblue-500 font-oswald my-4">
+        <div class="mx-2 p-2 hover:text-red-300"><span>ONE DISH MEAL</span></div>
+        <div class="mx-2 p-2 hover:text-red-300"><span>CHEESE</span></div>
+        <div class="mx-2 p-2 hover:text-red-300"><span>15 MINS</span></div>
+        <div class="mx-2 p-2 hover:text-red-300"><span>QUICK BREADS</span></div>
+        <div class="mx-2 p-2 hover:text-red-300"><span>SAUCES</span></div>      
+    </div>
+    <div class="h-4"></div>
+    <div id="category2" class="grid grid-cols-2 md:grid-cols-4 mx-4">
+    </div>
+    <div class="mt-20 mb-16 relative h-0.5 bg-slate-900">
+        <p class="bg-slate-900 text-3xl font-light text-white inline p-4 absolute -top-10 centered-axis-x">Evergreen</p>
+    </div>
+    <div id="cat3" class="grid grid-cols-5 mx-0 text-center text-3xl text-darkblue-500 font-oswald my-4">
+        <div class="mx-2 p-2 hover:text-red-300"><span>POTATO</span></div>
+        <div class="mx-2 p-2 hover:text-red-300"><span>BAR COOKIE</span></div>
+        <div class="mx-2 p-2 hover:text-red-300"><span>PIE</span></div>
+        <div class="mx-2 p-2 hover:text-red-300"><span>LOW PROTEIN</span></div>
+        <div class="mx-2 p-2 hover:text-red-300"><span>CANDY</span></div>      
+    </div>
+    <div class="h-4"></div>
+    <div id="category3" class="grid grid-cols-2 md:grid-cols-4 mx-4">
+    </div>
+    <div class="mt-20 mb-16 relative h-0.5 bg-slate-900">
+        <p class="bg-slate-900 text-3xl font-light text-white inline p-4 absolute -top-10 centered-axis-x">Non-Vegetarian</p>
+    </div>
+    <div id="cat4" class="grid grid-cols-4 mx-0 text-center text-3xl text-darkblue-500 font-oswald my-4">
+        <div class="mx-2 p-2 hover:text-red-300"><span>MEAT</span></div>
+        <div class="mx-2 p-2 hover:text-red-300"><span>CHICKEN</span></div>
+        <div class="mx-2 p-2 hover:text-red-300"><span>CHICKEN BREASTS</span></div>
+        <div class="mx-2 p-2 hover:text-red-300"><span>PORK</span></div>      
+    </div>
+    <div class="h-4"></div>
+    <div id="category4" class="grid grid-cols-2 md:grid-cols-4 mx-4">
+    </div>
+
+    <div class="h-8"></div>
+    <div class="h-96 bg-slate-800">
+        <div>
+            <!-- <img src="img/logo.svg" alt=""> -->
+            <object data="img/logo.svg" type="image/svg+xml" class="mx-auto w-96 mb-10"></object>
+        </div>
+        <div class="h-4"></div>
+        <div>
+            <ul class="grow items-center justify-center mx-52 text-xl font-normal md:flex mb-auto -mt-8">
+                <li class="flex-auto grow text-center text-slate-50"><a href="/">Home</a></li>
+                <li class="flex-auto grow text-center text-slate-50"><a href="/recipes">Recipes</a></li>
+                <li class="flex-auto grow text-center text-slate-50"><a href="/resources">Resources</a></li>
+                <li class="flex-auto grow text-center text-slate-50"><a href="/subscribe">Subscribe!</a></li>
+            </ul>
+        </div>
+        <!-- <div class="h-96 bg-slate-800">Icons</div> -->
+    </div>
+    <script src="index.js"></script>
+    <script src="recipes.js"></script>
+</body>
+</html>

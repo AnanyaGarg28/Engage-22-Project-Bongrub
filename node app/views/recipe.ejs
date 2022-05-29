@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="output.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/2ed088eaad.js" crossorigin="anonymous"></script>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Maven+Pro&family=Mochiy+Pop+One&family=Open+Sans:wght@300&family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <script>
+        let recipeRating=parseInt("<%=aggregatedRating%>");
+        let title='home';
+    </script>
+    <title><%= name %></title>
+    <link rel="icon" href="img/logo.png">
+</head>
+<body class="bg-orange-50">
+    <nav id="navbar" class="sticky pt-4 px-12 top-0 bg-orange-50 z-10">
+        <div class="flex">
+            <div class="md:hidden flex-none flex items-center justify-center">
+                <ul class="flex">
+                    <a href='/search'><li class="flex-auto grow text-2xl"><i class="fa-solid fa-magnifying-glass mx-2"></i></li></a>
+                </ul>
+            </div>
+            <div class="grow md:flex-none mr-4">
+                <object data="img/logo.svg" type="image/svg+xml" class="mx-auto" style="width: 10rem"></object>
+            </div>
+            <ul class="grow items-center justify-center mx-52 text-xl font-normal hidden md:flex">
+                <li class="p-4 flex-auto grow text-center home transition duration-150 ease-in-out transform hover:scale-105"><a href="/">HOME</a></li>
+                <li class="p-4 flex-auto grow text-center recipes transition duration-150 ease-in-out transform hover:scale-105"><a href="/recipes">RECIPES</a></li>
+                <li class="p-4 flex-auto grow text-center resources transition duration-150 ease-in-out transform hover:scale-105"><a href="/resources">RESOURCES</a></li>
+                <li class="p-4 flex-auto grow text-center subscribe text-red-600 transition duration-150 ease-in-out transform hover:scale-105"><a href="/subscribe">SUBSCRIBE!</a></li>
+            </ul>
+            <div class="flex-none hidden md:flex items-center justify-center">
+                <ul class="flex">
+                    <li class="flex-auto grow text-2xl"><i class="fa-solid fa-plus ml-2 mr-3"></i></li>
+                    <a href="/search"><li class="flex-auto grow text-2xl"><i class="fa-solid fa-magnifying-glass mx-2"></i></li></a>
+                </ul>
+            </div>
+            <div class="flex-none flex items-center justify-center align-right">
+                <button type="button" id="toggle-button" class="flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200 " aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                    <svg class="hidden w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+            </div>
+            </div>
+            <div class="toggle hidden h-0.5 w-full bg-mint-500 my-2 rounded-md"></div>
+            <div class="toggle hidden container w-full">
+            <ul>
+                <li class="my-4"><a href="/" class="hover:underline">Home</a></li>
+                <li class="my-4"><a href="/recipes">Recipes</a></li>
+                <li class="my-4"><a href="/resources">Resources</a></li>
+                <li class="my-4 text-red-600"><a href="/subscribe">Subscribe!</a></li>
+            </ul>
+            </div>
+            <div class="h-0.5 w-full bg-mint-500 my-2 rounded-md"></div>
+            <div class="h-0.5 w-full bg-mint-500 my-2 rounded-md"></div>
+    </nav>
+    <object data="img/logo.svg" type="image/svg+xml" class="mx-auto w-1/4"></object>
+    <div class="text-center text-5xl text-darkblue-500 font-oswald my-4">
+        <%= name.toUpperCase() %>
+    </div>
+    <div class="mx-12 h-1 bg-darkblue-500 my-2 "></div>
+    <div class="flex mx-12">
+        <span class="flex-none font-light">By <%= authorName %></span>
+        <span class="grow text-right"><i class="fa-solid fa-eye"></i> 2000 <i class="fa-solid fa-heart text-red-600"></i> 98</span>
+    </div>
+    <div class="mx-12 mt-8 mb-16 relative h-0.5 bg-darkblue-500">
+        <h6 class="bg-darkblue-500 text-sm font-thin text-white inline p-2 absolute -top-4 centered-axis-x">COOK WITH US: EASY, FREASH AND COLORFUL MEALS</h6>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 mx-12">
+        <div class="mx-4 text-md mb-6">
+            <img src="<%= images[0] %>" alt="" class="w-full mb-4">
+            <span class="font-thin">Servings</span><span class="font-light mr-2"> <%= recipeServings %></span>
+            <span class="ml-2 font-thin">in</span><span class="font-light"> <%= recipeCategory %></span>
+        </div>
+        <div class="mx-4">
+            <div id="starRating" class="flex items-center ">
+                <svg class="w-10 h-10 text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-10 h-10 text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-10 h-10 text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-10 h-10 text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-10 h-10 text-gray-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <span class="ml-4 text-2xl font-oswald"><%= aggregatedRating %> out of 5</span>
+            </div>
+            <div class="font-light text-gray-600 text-lg ml-2 my-1">
+                <%= reviewCount %> Reviews
+            </div>
+            <div class="font-normal ml-2 text-xl mt-12">
+                <table class="border-separate [border-spacing:1.25rem]">
+                    <tr>
+                        <td>Prep Time: </td>
+                        <td class="font-light text-gray-700"><%= prepTime.replace("H"," Hour ").replace("M"," Minutes") %></td>
+                    </tr>
+                    <tr>
+                        <td>Cook Time: </td>
+                        <td class="font-light text-gray-700"><%= cookTime.replace("H"," Hour ").replace("M"," Minutes") %></td>
+                    </tr>
+                    <tr>
+                        <td>Ready In: </td>
+                        <td class="font-light text-gray-700"><%= totalTime.slice(2).replace("H"," Hour ").replace("M"," Minutes") %></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="mx-12 mt-8 mb-16 h-0.5 bg-darkblue-500"></div>
+    <div class="mx-12 grid grid-cols-1 md:grid-cols-3 mb-10">
+        <div>
+            <div class="text-2xl font-bold text-darkblue-500 text-center">Ingredients</div>
+            <div class="mt-4 mb-2 h-1 bg-darkblue-500"></div>
+            <table class="border-separate [border-spacing:0.75rem] w-full font-lora">
+                <% recipeIngredientParts.forEach((inc,ind)=>{ %>
+                    <tr>
+                        <td><i class="fa-solid fa-circle-check"></i></td>
+                        <td><%= inc.slice(0,1).toUpperCase()+inc.slice(1) %></td>
+                        <td><%= recipeIngredientQuantities[ind].slice(0,1).toUpperCase()+recipeIngredientQuantities[ind].slice(1) %></td>
+                    </tr>
+                <% }); %>
+            </table>
+        </div>
+        <div class="col-span-2 mx-8">
+            <div class="text-2xl font-bold text-darkblue-500 text-center">Instructions</div>
+            <div class="mt-4 mb-2 h-1 bg-darkblue-500"></div>
+            <table class="border-separate [border-spacing:1.25rem] font-lora">
+                <% recipeInstructions.split('. ').forEach((step, ind)=>{ %>
+                    <tr class="list-decimal">
+                        <td class="font-bold"><%= ind+1 %>.</td>
+                        <td><%= step %>.</td>
+                    </tr>
+                <% }); %>
+            </table>
+        </div>
+    </div>
+    <div class="mx-12 mt-8 mb-16 h-0.5 bg-darkblue-500"></div>
+    <div class="mx-12 grid grid-cols-1 md:grid-cols-2">
+        <div class="mx-4 p-4">
+            <table class="bg-orange-100 border-separate [border-spacing:0.75rem] text-lg w-full">
+                <tr>
+                    <th class="text-2xl text-left">
+                        <div>NUTRITIONAL INFORMATION</div><span class="font-lora text-lg text-gray-600">Servings Per Recipe <%= recipeServings %></span>
+                    </th>
+                </tr>
+                <tr></tr>
+                <tr class="font-bold">
+                    <td>Calories</td>
+                    <td class="font-lora"><%= calories %><span class="font-thin text-sm text-gray-600"> KCal</span></td>
+                </tr>
+                <tr class="font-bold">
+                    <td>Fat</td>
+                    <td class="font-lora"><%= fatContent %><span class="font-thin text-sm text-gray-600"> gm</span></td>
+                </tr>
+                <tr class="font-bold">
+                    <td>Saturated Fat</td>
+                    <td class="font-lora"><%= saturatedFatContent %><span class="font-thin text-sm text-gray-600"> gm</span></td>
+                </tr>
+                <tr class="font-bold">
+                    <td>Cholestrol Content</td>
+                    <td class="font-lora"><%= cholesterolContent %><span class="font-thin text-sm text-gray-600"> mg</span></td>
+                </tr>
+                <tr class="font-bold">
+                    <td>Sodium</td>
+                    <td class="font-lora"><%= sodiumContent %><span class="font-thin text-sm text-gray-600"> mg</span></td>
+                </tr>
+                <tr class="font-bold">
+                    <td>Carbohydrates</td>
+                    <td class="font-lora"><%= carbohydrateContent %><span class="font-thin text-sm text-gray-600"> gm</span></td>
+                </tr>
+                <tr class="font-bold">
+                    <td>Fiber</td>
+                    <td class="font-lora"><%= fiberContent %><span class="font-thin text-sm text-gray-600"> gm</span></td>
+                </tr>
+                <tr class="font-bold">
+                    <td>Sugar</td>
+                    <td class="font-lora"><%= sugarContent %><span class="font-thin text-sm text-gray-600"> gm</span></td>
+                </tr>
+                <tr class="font-bold">
+                    <td>Protien</td>
+                    <td class="font-lora"><%= proteinContent %><span class="font-thin text-sm text-gray-600"> gm</span></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="mx-4 p-4">
+            <img src="<%= images[1] %>" alt="" class="w-full">
+        </div>
+    </div>
+    <div class="mx-12 mt-8 mb-16 relative h-0.5 bg-darkblue-500">
+        <h6 class="bg-darkblue-500 text-sm font-thin text-white inline p-2 absolute -top-4 centered-axis-x">Recipies Like This</h6>
+    </div>
+    <div id="popular" class="grid grid-cols-2 md:grid-cols-4 mx-4">
+        <% popularityArr.forEach((r)=>{ %>
+            <a href="/recipe?id=<%= r.id %>" class="transition duration-150 ease-in-out transform hover:scale-105"><div class="mx-8 my-2">
+                <img src="<%= r.img[0] %>" alt="" class="mb-4 h-60">
+                <div class="text-l font-normal my-4"><%= r.name %></div>
+                <div class="bg-gray-400 h-0.5"></div>
+                <div class="font-light my-4 flex">
+                    <span class="flex-none"><i class="fa-solid fa-clock"></i> <%= r.time.slice(2).replace("H"," Hour ").replace("M"," Minutes") %></span>
+                    <span class="flex-auto text-right"><%= r.category %></span>
+                </div>
+                <div class="bg-gray-400 h-0.5 mb-4"></div>
+            </div></a>
+        <% }); %>
+    </div>
+    <div class="h-8"></div>
+    <div class="h-96 bg-slate-800">
+        <div>
+            <object data="img/logo.svg" type="image/svg+xml" class="mx-auto w-96 mb-10"></object>
+        </div>
+        <div class="h-4"></div>
+        <div>
+            <ul class="grow items-center justify-center mx-52 text-xl font-normal md:flex mb-auto -mt-8">
+                <li class="flex-auto grow text-center text-slate-50"><a href="/">Home</a></li>
+                <li class="flex-auto grow text-center text-slate-50"><a href="/recipes">Recipes</a></li>
+                <li class="flex-auto grow text-center text-slate-50"><a href="/resources">Resources</a></li>
+                <li class="flex-auto grow text-center text-slate-50"><a href="/subscribe">Subscribe!</a></li>
+            </ul>
+        </div>
+        <!-- <div class="h-96 bg-slate-800">Icons</div> -->
+    </div>
+    <script src="recipe.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="output.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Maven+Pro&family=Mochiy+Pop+One&family=Open+Sans:wght@300&family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2ed088eaad.js" crossorigin="anonymous"></script>
+    <title>Bongrub</title>
+    <link rel="icon" href="img/logo.png">
+    <script>
+        let title='resources';
+    </script>
+</head>
+<body class="bg-orange-50">
+    <nav id="navbar" class="sticky pt-4 px-12 top-0 bg-orange-50 z-10">
+        <div class="flex">
+            <div class="md:hidden flex-none flex items-center justify-center">
+                <ul class="flex">
+                    <a href='/search'><li class="flex-auto grow text-2xl"><i class="fa-solid fa-magnifying-glass mx-2"></i></li></a>
+                </ul>
+            </div>
+            <div class="grow md:flex-none mr-4">
+                <object data="img/logo.svg" type="image/svg+xml" class="mx-auto" style="width: 10rem"></object>
+            </div>
+            <ul class="grow items-center justify-center mx-52 text-xl font-normal hidden md:flex">
+                <li class="p-4 flex-auto grow text-center home transition duration-150 ease-in-out transform hover:scale-105"><a href="/">HOME</a></li>
+                <li class="p-4 flex-auto grow text-center recipes transition duration-150 ease-in-out transform hover:scale-105"><a href="/recipes">RECIPES</a></li>
+                <li class="p-4 flex-auto grow text-center resources transition duration-150 ease-in-out transform hover:scale-105"><a href="/resources">RESOURCES</a></li>
+                <li class="p-4 flex-auto grow text-center subscribe text-red-600 transition duration-150 ease-in-out transform hover:scale-105"><a href="/subscribe">SUBSCRIBE!</a></li>
+            </ul>
+            <div class="flex-none hidden md:flex items-center justify-center">
+                <ul class="flex">
+                    <li class="flex-auto grow text-2xl"><i class="fa-solid fa-plus ml-2 mr-3"></i></li>
+                    <a href="/search"><li class="flex-auto grow text-2xl"><i class="fa-solid fa-magnifying-glass mx-2"></i></li></a>
+                </ul>
+            </div>
+            <div class="flex-none flex items-center justify-center align-right">
+                <button type="button" id="toggle-button" class="flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200 " aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                    <svg class="hidden w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+            </div>
+            </div>
+            <div class="toggle hidden h-0.5 w-full bg-mint-500 my-2 rounded-md"></div>
+            <div class="toggle hidden container w-full">
+            <ul>
+                <li class="my-4"><a href="/" class="hover:underline">Home</a></li>
+                <li class="my-4"><a href="/recipes">Recipes</a></li>
+                <li class="my-4"><a href="/resources">Resources</a></li>
+                <li class="my-4 text-red-600"><a href="/subscribe">Subscribe!</a></li>
+            </ul>
+            </div>
+            <div class="h-0.5 w-full bg-mint-500 my-2 rounded-md"></div>
+            <div class="h-0.5 w-full bg-mint-500 my-2 rounded-md"></div>
+    </nav>
+    <!-- <object data="img/logo.svg" type="image/svg+xml" class="mx-auto w-1/3"></object> -->
+    <div class="h-20"></div>
+    <div class="mx-12 grid grid-cols-1 md:grid-cols-2 divide-x-2 divide-mint-500 font-light leading-7 mb-20">
+        <div class="grid content-center">
+            <p class="text-darkblue-500 text-5xl font-oswald text-center">STYLE IT YOUR WAY</p>
+            <!-- <p class="italic text-xl text-center">Add yours to get featured</p> -->
+            <p class="text-left text-2xl mx-8 mt-10">Welcome Food Bloggers! We appreciate your interest in checking out our resources section. We strive to make this feature to be of best use to our users. With a collection of a dozen articles, we also encourage budding food bloggers share their articles on whatever special they make and are proud of! 
+                </p>
+            <p class="text-left text-2xl mx-8 mt-10">  Whether it's your plating style, or dining layout, or refrigerator collection, you can have it featured here. Submit your entires to Bongrub and we've got you covered.</p>
+        </div> 
+        
+        <div class="grid content-right">
+            <img src="img/ResourcesImg.png" alt="">
+        </div>      
+    </div>
+    <div class="h-10"></div>
+    <div class="text-center text-5xl text-darkblue-500 font-oswald my-4">SPECIALLY CURATED RESOURCES FOR YOU</div>
+    
+    <div class="mt-8 mb-16 h-1 bg-slate-900 w-full"></div>
+
+    <div class="grid grid-cols-4 divide-x font-light content-center leading-7 mb-20 mt-20">
+        <div>
+            <img src="img/Pasta.jpg" alt="" class="ml-1 p-6 w-4/6 h-full">
+            <p class="text-3xl text-center font-oswald my-2"><a href="https://www.foodbloggersofcanada.com/2017/10/food-styling-pasta-dishes/" target="_blank">Tips for Styling Pasta Dishes</a></p>
+        </div>
+        <div>
+            <img src="img/Cakes.jpg" alt="" class="mx-2 p-6 w-4/6 h-full">
+            <p class="text-3xl text-center font-oswald my-2"><a href="https://www.foodbloggersofcanada.com/2017/06/how-to-food-style-cakes/" target="_blank">Tips for Styling Cakes</a></p>
+        </div>
+        <div>
+            <img src="img/Sandwich.jpg" alt="" class="mx-2 p-6 w-4/6 h-full">
+            <p class="text-3xl text-center font-oswald my-2"> <a href="https://www.foodbloggersofcanada.com/tips-for-styling-sandwiches/" target="_blank">Tips for Styling Sandwiches</a> </p>
+        </div>
+        <div>
+            <img src="img/Soup.jpg" alt="" class="mr-1 p-6 w-4/6 h-full">
+            <p class="text-3xl text-center font-oswald my-2"><a href="https://www.foodbloggersofcanada.com/2017/12/food-styling-tips-for-soups/" target="_blank">Tips for Styling Soups For The Camera</a></p>
+
+        </div>
+    </div>
+
+    <div class="mt-16 mb-16 relative h-0.5 bg-slate-900 w-full"></div>
+
+    <div class="grid grid-cols-4 divide-x font-light content-center leading-7 mb-20 mt-20">
+        <div>
+            <img src="img/Casseroles.jpg" alt="" class="mx-2 p-6 w-4/6 h-full">
+            <p class="text-3xl text-center font-oswald my-2"><a href="https://www.foodbloggersofcanada.com/2017/11/food-styling-tips-for-styling-casseroles/" target="_blank">Tips for Styling Casseroles</a></p>
+        </div>
+        <div>
+            <img src="img/RawIngredients.jpg" alt="" class="ml-1 p-6 w-4/6 h-full">
+            <p class="text-3xl text-center font-oswald my-2"><a href="https://www.foodbloggersofcanada.com/2017/06/food-styling-raw-ingredients-for-the-camera/" target="_blank">Tips for Styling Raw Ingredients For The Camera</a></p>
+        </div>
+    </div>
+
+    <div class="h-8"></div>
+    
+    <div class="h-4"></div>
+
+    <div class="h-8"></div>
+
+    <div class="h-96 bg-slate-800">
+        <div>
+            <!-- <img src="img/logo.svg" alt=""> -->
+            <object data="img/logo.svg" type="image/svg+xml" class="mx-auto w-96 mb-10"></object>
+        </div>
+        <div class="h-4"></div>
+        <div>
+            <ul class="grow items-center justify-center mx-52 text-xl font-normal md:flex mb-auto -mt-8">
+                <li class="flex-auto grow text-center text-slate-50"><a href="/">Home</a></li>
+                <li class="flex-auto grow text-center text-slate-50"><a href="/recipes">Recipes</a></li>
+                <li class="flex-auto grow text-center text-slate-50"><a href="/resources">Resources</a></li>
+                <li class="flex-auto grow text-center text-slate-50"><a href="/subscribe">Subscribe!</a></li>
+            </ul>
+        </div>
+        <!-- <div class="h-96 bg-slate-800">Icons</div> -->
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

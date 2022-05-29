@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="output.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/2ed088eaad.js" crossorigin="anonymous"></script>
+    <script>
+        let crrImgArr=`<%= crrImgArr %>`;
+        crrImgArr=crrImgArr.split(',');
+        let title='home';
+    </script>
+    <title>Bongrub</title>
+    <link rel="icon" href="img/logo.png">
+</head>
+<body class="bg-orange-50">
+    <nav id="navbar" class="sticky pt-4 px-12 top-0 bg-orange-50 z-10"><div class="flex">
+        <div class="md:hidden flex-none flex items-center justify-center">
+            <ul class="flex">
+                <a href='/search'><li class="flex-auto grow text-2xl"><i class="fa-solid fa-magnifying-glass mx-2"></i></li></a>
+            </ul>
+        </div>
+        <div class="grow md:flex-none mr-4">
+            <object data="img/logo.svg" type="image/svg+xml" class="mx-auto" style="width: 10rem"></object>
+        </div>
+        <ul class="grow items-center justify-center mx-52 text-xl font-normal hidden md:flex">
+            <li class="p-4 flex-auto grow text-center home transition duration-150 ease-in-out transform hover:scale-105"><a href="/">HOME</a></li>
+            <li class="p-4 flex-auto grow text-center recipes transition duration-150 ease-in-out transform hover:scale-105"><a href="/recipes">RECIPES</a></li>
+            <li class="p-4 flex-auto grow text-center resources transition duration-150 ease-in-out transform hover:scale-105"><a href="/resources">RESOURCES</a></li>
+            <li class="p-4 flex-auto grow text-center subscribe text-red-600 transition duration-150 ease-in-out transform hover:scale-105"><a href="/subscribe">SUBSCRIBE!</a></li>
+        </ul>
+        <div class="flex-none hidden md:flex items-center justify-center">
+            <ul class="flex">
+                <li class="flex-auto grow text-2xl"><i class="fa-solid fa-plus ml-2 mr-3"></i></li>
+                <a href="/search"><li class="flex-auto grow text-2xl"><i class="fa-solid fa-magnifying-glass mx-2"></i></li></a>
+            </ul>
+        </div>
+        <div class="flex-none flex items-center justify-center align-right">
+            <button type="button" id="toggle-button" class="flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200 " aria-controls="mobile-menu" aria-expanded="false">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                <svg class="hidden w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </button>
+        </div>
+        </div>
+        <div class="toggle hidden h-0.5 w-full bg-mint-500 my-2 rounded-md"></div>
+        <div class="toggle hidden container w-full">
+        <ul>
+            <li class="my-4"><a href="/" class="hover:underline">Home</a></li>
+            <li class="my-4"><a href="/recipes">Recipes</a></li>
+            <li class="my-4"><a href="/resources">Resources</a></li>
+            <li class="my-4 text-red-600"><a href="/subscribe">Subscribe!</a></li>
+        </ul>
+        </div>
+        <div class="h-0.5 w-full bg-mint-500 my-2 rounded-md"></div>
+        <div class="h-0.5 w-full bg-mint-500 my-2 rounded-md"></div>
+    </nav>
+    <object data="img/logo.svg" type="image/svg+xml" class="mx-auto w-1/3"></object>
+    <div id="carousel" class="relative overflow-hidden">
+        <div class="w-1/2 invisible">
+            <img src="img/slide-1.jpeg" alt="" class="w-full">
+        </div>
+    </div>
+    <div class="h-12"></div>
+    <div class="mt-8 mb-16 relative h-0.5 bg-slate-900">
+        <p class="bg-slate-900 text-3xl font-light text-white inline p-4 absolute -top-10 centered-axis-x">Good Food = Good Mood</p>
+    </div>
+
+    <div class="h-8"></div>
+    <div class="mx-12 grid grid-cols-1 md:grid-cols-3 text-xl font-light leading-7 mb-20">
+        <div class="mx-4">
+            <p>Wake'up. It's Food O'Clock 🍕. Food is something that is universal to all of us and it is what binds us together. So this is an attempt to hunt for the bestest recipes in the world to help crave our taste buds and satisfy our stomach.</p>
+        </div>
+        <div class="mx-4">
+            <p>Here you can find original recipes from around the world and try them on. With recipes ranging from varied categories to some which can be cooked in a few minutes, here we present to you a collection of most popular recipes for you to cherish.</p>
+        </div>
+        <div class="mx-4">
+            <p>This is one of the best original recipe blogs. The blog below contain out-of-this-world recipes, insightful posts on diet trends, and realistic tips to help you eat smarter—whether you're Paleo, vegetarian, gluten-free, or just happen to love food.</p>
+        </div>      
+    </div>
+    <div class="font-serif text-4xl text-center">RECIPES</div>
+    <div class="h-8"></div>
+    <div class="mt-8 mb-16 relative h-0.5 bg-slate-900">
+        <p class="bg-slate-900 text-3xl font-light text-white inline p-4 absolute -top-10 centered-axis-x">Featured recipes</p>
+    </div>
+    <div class="h-8"></div>
+    <div id="popular" class="grid grid-cols-2 md:grid-cols-4 mx-4">
+        <% popularityArr.forEach((r)=>{ %>
+            <a href="/recipe?id=<%= r.id %>" class="transition duration-150 ease-in-out transform hover:scale-105">
+                <div class="mx-8 my-2">
+                    <img src="<%= r.img[0] %>" alt="" class="mb-4 h-60">
+                    <div class="text-2xl font-normal my-4"><%= r.name %></div>
+                    <div class="bg-gray-400 h-0.5"></div>
+                    <div class="font-light my-4 flex">
+                        <span class="flex-none"><i class="fa-solid fa-clock"></i> <%= r.time.slice(2).replace("H"," Hour ").replace("M"," Minutes") %></span>
+                        <span class="flex-auto text-right"><%= r.category %></span>
+                    </div>
+                    <div class="bg-gray-400 h-0.5 mb-4"></div>
+                </div>
+            </a>
+        <% }); %>
+    </div>
+    <div class="h-12"></div>
+    <div class="hover:text-lime-400 text-darkblue-500 p-4 text-2xl text-center"><a href="/recipes">Explore More Recipes <i class="fa-solid fa-plate-utensils mx-2"></i></a></div>
+    <div class="h-12"></div>
+    <div class="h-96 bg-slate-800">
+        <div>
+            <object data="img/logo.svg" type="image/svg+xml" class="mx-auto w-96 mb-10"></object>
+        </div>
+        <div class="h-4"></div>
+        <div>
+            <ul class="grow items-center justify-center mx-52 text-xl font-normal md:flex mb-auto -mt-8">
+                <li class="flex-auto grow text-center text-slate-50"><a href="/">Home</a></li>
+                <li class="flex-auto grow text-center text-slate-50"><a href="/recipes">Recipes</a></li>
+                <li class="flex-auto grow text-center text-slate-50"><a href="/resources">Resources</a></li>
+                <li class="flex-auto grow text-center text-slate-50"><a href="/subscribe">Subscribe!</a></li>
+            </ul>
+        </div>
+        <!-- <div class="h-96 bg-slate-800">Icons</div> -->
+    </div>
+    <script src="index.js"></script>
+    <script src="home.js"></script>
+</body>
+</html>
