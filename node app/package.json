@@ -1,0 +1,21 @@
+{
+  "name": "node-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ananya",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "ejs": "^3.1.8",
+    "eks": "^0.7.0",
+    "express": "^4.18.1",
+    "request-promise": "^4.2.6"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.0.24"
+  }
+}
