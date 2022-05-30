@@ -10,7 +10,7 @@ This is '**Bongrub**', meaning **happy grubs** (informal for food) 😋. We all 
 
 ### WORKING
 <hr>
-This is a web application that works like a **recipe repository** for all those foodies out there who are waiting to try out new recipes. It works on a **recommendation engine** built using **machine learning models** which would secretly identify the user's taste buds and try to keep the user attached to this application by recommending similar recipes based on the content browsed. 
+This is a web application that works like a recipe repository for all those foodies out there who are waiting to try out new recipes. It works on a recommendation engine built using machine learning models which would secretly identify the user's taste buds and try to keep the user attached to this application by recommending similar recipes based on the content browsed. 
 
 A recommendation engine could be classified based on three major categories: 
 
@@ -64,6 +64,5 @@ To run this code in your local machine, follow these steps:
 
 The application is now running on your machine. You can access it by typing **localhost:3001** in your browser.
 
-<hr>
 
 Hope you like the recommendations!! **Happy Grubbing** ✨!! 
