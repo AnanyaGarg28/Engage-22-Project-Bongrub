@@ -64,5 +64,12 @@ To run this code in your local machine, follow these steps:
 
 The application is now running on your machine. You can access it by typing **localhost:3001** in your browser.
 
+<img src="https://user-images.githubusercontent.com/92284167/171047289-5a26ed99-0aa3-405a-8ad5-41de09ceb9b1.png" width=800>
+
+<img src="https://user-images.githubusercontent.com/92284167/171048059-4e317ff8-1b6a-4884-bee5-98b987e43a09.png" width=800>
+
+<img src="https://user-images.githubusercontent.com/92284167/171048662-093f0029-1282-4630-92ef-79dda6e6fd18.png" width=800>
+
+<img src="https://user-images.githubusercontent.com/92284167/171046729-1fc35463-1bc6-44e4-891b-4acaf49d5de3.png" width=800>
 
 Hope you like the recommendations!! **Happy Grubbing** ✨!! 
